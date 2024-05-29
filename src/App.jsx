@@ -1,15 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import LoginPage from './LoginPage';
 import LeaderBoard from './Leaderboard';
 
 function App() {
+  const leaderboard = true; // Assuming leaderboard is a boolean
   return (
     <Router>
       <div>
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />
         </Routes>
       </div>
@@ -19,10 +20,6 @@ function App() {
 
 export default App;
 
-const rootElement = document.getElementById('root');
-if (!rootElement._reactRootContainer) {
-  const root = createRoot(rootElement);
-  root.render(<App />);
-} else {
-  rootElement._reactRootContainer.render(<App />);
-}
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);

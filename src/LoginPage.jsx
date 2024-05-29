@@ -1,11 +1,18 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
 import bash from "../src/dist/assets/img/bashers.png"
 import google from "../src/dist/assets/img/google-icon.png"
-import './LoginPage.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Perform login logic here...
+
+    // After logging in, navigate to the leaderboard page
+    navigate('/leaderboard');
+  };
     return (
       <div className="container" id="container">
         <div className="form-container sign-up-container">
@@ -30,6 +37,10 @@ function LoginPage() {
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
             {/* <a href="#">Forgot your password?</a> */}
+            {/*<form onSubmit={handleSubmit}>
+            {/* Your form fields here... */}
+            {/*<button type="submit">Log in</button>*/}
+            {/*</form>*/}
             <div className="flex flex-col items-center mt-7 text-gray-500">
             <div className="flex items-center w-full mb-5">
                 <hr className="flex-grow border-gray-500" />
@@ -84,6 +95,3 @@ function LoginPage() {
   }
   
   export default LoginPage;
-
-  const root = createRoot(document.getElementById('root'));
-  root.render(<LoginPage />);
