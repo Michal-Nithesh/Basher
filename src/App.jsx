@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import bash from "../src/dist/assets/img/bashers.png"
+import google from "../src/dist/assets/img/google-icon.png"
 
 function App() {
     return (
@@ -19,14 +21,13 @@ function App() {
         <div className="form-container sign-in-container">
           <form action="#">
             <div>
-                <img alt="" src="./img/bashers.png" width="60px" height="60px"></img>
+                <img  src={bash}  width="60px" height="60px"></img>
             </div>
             <h1>Sign in</h1>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            {/* <a href="#">Forgot your password?</a> */}
             <div className="flex flex-col items-center mt-7 text-gray-500">
             <div className="flex items-center w-full mb-5">
                 <hr className="flex-grow border-gray-500" />
@@ -35,7 +36,7 @@ function App() {
             </div>
             </div>
             <button className='Gog'>
-            <img src="./img/google-icon.png" width="20px" height="20px"/>
+            <img src={google} width="20px" height="20px"/>
                 Login with Google
             </button>
           </form>
@@ -48,9 +49,9 @@ function App() {
               <button className="ghost" id="signIn" onClick={handleSignIn}>Sign In</button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
+              <h1>Hello, Bashers!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp" onClick={handleSignUp}>Sign Up</button>
+              <button className="ghost" id="signUp" onClick={contactAlert}>Sign Up</button>
             </div>
           </div>
         </div>
@@ -75,8 +76,12 @@ function App() {
   function handleSignIn() {
     document.getElementById('container').classList.remove("right-panel-active");
   }
+
+  function contactAlert(){
+    alert("As a guest you can't access this page, please sign in or sign up to access this page")
+  }
   
   export default App;
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+  const root = createRoot(document.getElementById('root'));
+  root.render(<App />);
