@@ -91,11 +91,6 @@ const Leaderboard = () => {
                                                         </tr>
                                                     ))}
                                                     <tr>
-                                                        <th scope="row">05</th>
-                                                        <td className="user_circle"><span className="circle user2"></span> John Pentol</td>
-                                                        <td>13.200 <img src={gemIcon} alt="" /></td>
-                                                    </tr>
-                                                    <tr>
                                                         <th scope="row">06</th>
                                                         <td className="user_circle"><span className="circle user3"></span>Magda Hera</td>
                                                         <td>13.200 <img src={gemIcon} alt="" /></td>
