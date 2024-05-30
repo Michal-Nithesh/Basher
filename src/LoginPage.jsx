@@ -1,3 +1,4 @@
+// src/LoginPage.jsx
 import React from 'react';
 import bash from "../src/dist/assets/img/bashers.png"
 import google from "../src/dist/assets/img/google-icon.png"
