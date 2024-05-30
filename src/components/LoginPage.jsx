@@ -1,18 +1,16 @@
 // src/LoginPage.jsx
 import React from 'react';
-import bash from "../src/dist/assets/img/bashers.png"
-import google from "../src/dist/assets/img/google-icon.png"
+import bash from "../assets/img/bashers.png";
+import google from "../assets/img/google-icon.png";
 import { useNavigate } from 'react-router-dom';
+import '../css/LoginPage.css';
 
 
 function LoginPage() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform login logic here...
-
-    // After logging in, navigate to the leaderboard page
-    navigate('/leaderboard');
+    navigate('/Leaderboard');
   };
     return (
       <div className="container" id="container">

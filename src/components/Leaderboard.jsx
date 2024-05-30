@@ -1,21 +1,21 @@
 //src/Leaderboard.jsx
 import React, { useState, useEffect } from 'react';
-import crownIcon from '../src/leaderboard_files/crown.svg';
-import cupIcon from '../src/leaderboard_files/cup.svg';
-import medalIcon from '../src/leaderboard_files/medal.svg';
-import gemIcon from '../src/leaderboard_files/gem_002.svg';
-import gem from '../src/leaderboard_files/gem.svg';
-import ani17 from '../src/leaderboard_files/ani-17.png';
-import ani18 from '../src/leaderboard_files/ani-18.png';
-import mLogo from '../src/leaderboard_files/m_logo.png';
-import polygon from '../src/leaderboard_files/polygon.svg';
-import circle2 from '../src/leaderboard_files/circle2.svg';
-import circleline from '../src/leaderboard_files/circleline.svg';
-import line from '../src/leaderboard_files/line.svg';
-import Bcircle from '../src/leaderboard_files/brown_circle.svg';
-import logo from '../src/leaderboard_files/logo.png';
-import './Leaderboard.css';
-import { handleDropdown } from './script';
+import crownIcon from '../leaderboard_files/crown.svg';
+import cupIcon from '../leaderboard_files/cup.svg';
+import medalIcon from '../leaderboard_files/medal.svg';
+import gemIcon from '../leaderboard_files/gem_002.svg';
+import gem from '../leaderboard_files/gem.svg';
+import ani17 from '../leaderboard_files/ani-17.png';
+import ani18 from '../leaderboard_files/ani-18.png';
+import mLogo from '../leaderboard_files/m_logo.png';
+import polygon from '../leaderboard_files/polygon.svg';
+import circle2 from '../leaderboard_files/circle2.svg';
+import circleline from '../leaderboard_files/circleline.svg';
+import line from '../leaderboard_files/line.svg';
+import Bcircle from '../leaderboard_files/brown_circle.svg';
+import logo from '../leaderboard_files/logo.png';
+import '../css/Leaderboard.css';
+import { handleDropdown } from '../script';
 
 
 
