@@ -1,4 +1,3 @@
-//src/Leaderboard.jsx
 import React, { useState, useEffect } from 'react';
 import crownIcon from '../leaderboard_files/crown.svg';
 import cupIcon from '../leaderboard_files/cup.svg';
@@ -16,8 +15,7 @@ import Bcircle from '../leaderboard_files/brown_circle.svg';
 import logo from '../leaderboard_files/logo.png';
 import '../css/Leaderboard.css';
 import { handleDropdown } from '../script';
-
-
+import { Link } from 'react-router-dom'; // Use Link for internal navigation
 
 const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);
@@ -28,9 +26,10 @@ const Leaderboard = () => {
             .then(data => setLeaderboard(data))
             .catch(error => console.error('There was an error!', error));
         handleDropdown();
- 
-   }, []);
-   const randomUserNumber = Math.floor(Math.random() * 7) + 1;
+    }, []);
+
+    const randomUserNumber = Math.floor(Math.random() * 7) + 1;
+
     return (
         <>
             <div id="__next">
@@ -40,18 +39,26 @@ const Leaderboard = () => {
                             <div className="row">
                                 <div className="col-xl-12">
                                     <nav className="navbar navbar-expand-lg navbar-light">
-                                        <a className="navbar-brand" href="#">
+                                        <Link className="navbar-brand" to="/">
                                             <img src={logo} alt="Logo" />
-                                        </a>
+                                        </Link>
                                         <button className="navbar-toggler" type="button">
                                             <span className="navbar-toggler-icon"></span>
                                         </button>
                                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                             <ul className="navbar-nav menu">
-                                                <li className="nav-item"><a className="nav-link" href="#About">About</a></li>
-                                                <li className="nav-item"><a className="nav-link" href="#affiliate">Affiliates</a></li>
-                                                <li className="nav-item"><a className="nav-link" href="#leaderboard">Leaderboards</a></li>
-                                                <li className="nav-item"><a className="nav-link" href="#support">Support</a></li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#About">About</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#affiliate">Affiliates</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#leaderboard">Leaderboards</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link className="nav-link" to="#support">Support</Link>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div className="dashboard_log my-2">
@@ -69,18 +76,18 @@ const Leaderboard = () => {
                                                         <span className="arrow"><i className="la la-angle-down"></i></span>
                                                     </div>
                                                     <div className="dropdown-menu dropdown-menu-end" style={{ right: 0, left: 'auto' }}>
-                                                        <a className="dropdown-item" href="#profile">
+                                                        <Link className="dropdown-item" to="#profile">
                                                             <i className="la la-user"></i>Profile
-                                                        </a>
-                                                        <a className="dropdown-item" href="#history">
+                                                        </Link>
+                                                        <Link className="dropdown-item" to="#history">
                                                             <i className="la la-book"></i>History
-                                                        </a>
-                                                        <a className="dropdown-item" href="#settings">
+                                                        </Link>
+                                                        <Link className="dropdown-item" to="#settings">
                                                             <i className="la la-cog"></i>Settings
-                                                        </a>
-                                                        <a className="dropdown-item logout" href="#Logout">
+                                                        </Link>
+                                                        <Link className="dropdown-item logout" to="#Logout">
                                                             <i className="la la-sign-out"></i>Logout
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -96,7 +103,7 @@ const Leaderboard = () => {
                                 <div className="col-xl-12">
                                     <div className="page_title-content">
                                         <p>Leaderboard</p>
-                                        <h3>Basher's Top Ranking</h3>
+                                        <h3>Basher&apos;s Top Ranking</h3>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +118,6 @@ const Leaderboard = () => {
                 <div className="leaderboard">
                     <div className="container">
                         <div className="row">
-
                             <div className="col-xl-6">
                                 <div className="leaderboard_top_rank">
                                     <div className="ani-17"><img src={ani17} alt="Animation 17" /></div>
@@ -188,7 +194,7 @@ const Leaderboard = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="load_more"><a href="#">Load More</a></div>
+                                    <div className="load_more"><button onClick={() => alert('Loading more...')}>Load More</button></div>
                                 </div>
                             </div>
                         </div>
@@ -199,21 +205,21 @@ const Leaderboard = () => {
                         <div className="row">
                             <div className="col-xl-6">
                                 <div className="footer-link text-left">
-                                    <a className="m_logo" href="#leaderboard">
+                                    <Link className="m_logo" to="#leaderboard">
                                         <img src={mLogo} alt="Logo" />
-                                    </a>
-                                    <a href="#">Shop</a>
-                                    <a href="#affiliate">Affiliates</a>
-                                    <a href="#leaderboard">Leaderboards</a>
-                                    <a href="#support">Support</a>
+                                    </Link>
+                                    <Link to="#">Shop</Link>
+                                    <Link to="#affiliate">Affiliates</Link>
+                                    <Link to="#leaderboard">Leaderboards</Link>
+                                    <Link to="#support">Support</Link>
                                 </div>
                             </div>
                             <div className="col-xl-6">
                                 <div className="footer-link text-end">
-                                    <a href="#about">About</a>
-                                    <a href="#privacy-policy">Privacy Policy</a>
-                                    <a href="#term-condition">Terms & Service</a>
-                                    <a href="#bug-bounty">Bug Bounty</a>
+                                    <Link to="#about">About</Link>
+                                    <Link to="#privacy-policy">Privacy Policy</Link>
+                                    <Link to="#term-condition">Terms & Service</Link>
+                                    <Link to="#bug-bounty">Bug Bounty</Link>
                                 </div>
                             </div>
                         </div>
@@ -225,13 +231,13 @@ const Leaderboard = () => {
                             </div>
                             {/* Uncomment and update links for social media icons */}
                             {/* <div className="col-xl-6 text-center text-lg-end py-5 py-lg-0">
-                        <div className="social">
-                            <a href="#leaderboard"><i className="fab fa-youtube"></i></a>
-                            <a href="#leaderboard"><i className="fab fa-instagram"></i></a>
-                            <a href="#leaderboard"><i className="fab fa-twitter"></i></a>
-                            <a href="#leaderboard"><i className="fab fa-facebook"></i></a>
-                        </div>
-                    </div> */}
+                                <div className="social">
+                                    <Link to="#leaderboard"><i className="fab fa-youtube"></i></Link>
+                                    <Link to="#leaderboard"><i className="fab fa-instagram"></i></Link>
+                                    <Link to="#leaderboard"><i className="fab fa-twitter"></i></Link>
+                                    <Link to="#leaderboard"><i className="fab fa-facebook"></i></Link>
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
